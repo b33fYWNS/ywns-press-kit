@@ -36,7 +36,7 @@
     }
 
     .media-box {
-      background: url('Small_Capsule.png') center/cover no-repeat; /* Set the background image */
+      background-color: #3a2e2c;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -58,6 +58,12 @@
       margin-bottom: 10px;
       border-radius: 5px;
     }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid layout */
+      grid-gap: 15px; /* Add some spacing between the images */
+    }
   </style>
 </head>
 <body>
@@ -72,6 +78,7 @@
   
     <div class="media-box">
     <h2>Art</h2>
+    <div class="image-grid">
     <!-- Your various images go here -->
     <img src="mav4_scaled_6x_pngcrushed.png" alt="Image 1">
     <img src="FgrhgHEXgAM4E8o.png" alt="Image 2">
@@ -80,6 +87,7 @@
   </div>
     <div class="media-box">
     <h2>Pixel Art</h2>
+    <div class="image-grid">
     <!-- Your various images go here -->
     <img src="moth_manv2_scaled_6x_minified.gif" alt="Mothman">
     <img src="hud_select-level_boss_piyu_scaled_5x_minified.gif" alt="Piyu">
