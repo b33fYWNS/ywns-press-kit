@@ -1,12 +1,10 @@
 @font-face {
   font-family: 'Hexenaat2';
-  src: url('Hexenaat2.ttf') format('truetype'); /* Corrected format for TTF file */
-  /* Add additional formats if needed */
+  src: url('Hexenaat2.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 body {
-  font-family: 'Hexenaat2', sans-serif; /* Use the correct font-family name */
-  /* Use the custom font in the desired elements */
+  font-family: 'Hexenaat2', sans-serif;
 }
