@@ -73,28 +73,35 @@
     }
   </style>
   <script>
-    // JavaScript to trigger fade-in effect on scroll
-    document.addEventListener("DOMContentLoaded", function() {
-      const mediaBoxes = document.querySelectorAll(".media-box");
+  // JavaScript to trigger fade-in effect on scroll
+  document.addEventListener("DOMContentLoaded", function() {
+    const mediaBoxes = document.querySelectorAll(".media-box");
 
-      function checkFadeIn() {
-        mediaBoxes.forEach((box) => {
-          const boxTop = box.getBoundingClientRect().top;
-          const triggerPoint = window.innerHeight - box.clientHeight / 2;
+    function isElementInViewport(el) {
+      const rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
 
-          if (boxTop < triggerPoint) {
-            box.classList.add("fade-in");
-          }
-        });
-      }
+    function checkFadeIn() {
+      mediaBoxes.forEach((box) => {
+        if (isElementInViewport(box)) {
+          box.classList.add("fade-in");
+        }
+      });
+    }
 
-      // Initial check on page load
-      checkFadeIn();
+    // Initial check on page load
+    checkFadeIn();
 
-      // Check on scroll
-      window.addEventListener("scroll", checkFadeIn);
-    });
-  </script>
+    // Check on scroll
+    window.addEventListener("scroll", checkFadeIn);
+  });
+</script>
 </head>
 <body>
   <div class="parallax-bg"></div>
