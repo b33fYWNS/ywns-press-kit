@@ -90,6 +90,7 @@
     background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
+    z-index: 9999;
   }
 
   .modal-content {
@@ -136,6 +137,15 @@
     // Check on scroll
     window.addEventListener("scroll", checkFadeIn);
   });
+    
+    // Event listener for closing the modal when clicking outside the image
+  const modalOverlay = document.getElementById("image-modal");
+  modalOverlay.addEventListener("click", function(event) {
+    if (event.target === modalOverlay) {
+      closeModal();
+    }
+  });
+});
 </script>
 </head>
 <body>
