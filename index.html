@@ -38,6 +38,8 @@
 
     .media-box {
       background: url('MediaBoxBG.png');
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
       padding: 10px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -47,6 +49,10 @@
       text-align: center;
       position: relative;
       z-index: 1; /* Bring the media box above the background */
+    }
+
+    .fade-in {
+      opacity: 1;
     }
 
     .media-box h2 {
@@ -66,6 +72,29 @@
       grid-gap: 15px; /* Add some spacing between the images */
     }
   </style>
+  <script>
+    // JavaScript to trigger fade-in effect on scroll
+    document.addEventListener("DOMContentLoaded", function() {
+      const mediaBoxes = document.querySelectorAll(".media-box");
+
+      function checkFadeIn() {
+        mediaBoxes.forEach((box) => {
+          const boxTop = box.getBoundingClientRect().top;
+          const triggerPoint = window.innerHeight - box.clientHeight / 2;
+
+          if (boxTop < triggerPoint) {
+            box.classList.add("fade-in");
+          }
+        });
+      }
+
+      // Initial check on page load
+      checkFadeIn();
+
+      // Check on scroll
+      window.addEventListener("scroll", checkFadeIn);
+    });
+  </script>
 </head>
 <body>
   <div class="parallax-bg"></div>
