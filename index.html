@@ -76,9 +76,11 @@
     }
 
     .image-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Responsive grid layout */
-      grid-gap: 15px; /* Add some spacing between the images */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap; /* Allows items to wrap to the next line if there are too many */
+      gap: 15px;
     }
     .modal {
     display: none;
