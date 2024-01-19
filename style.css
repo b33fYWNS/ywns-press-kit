@@ -19,3 +19,12 @@ body {
 .fade-in {
   opacity: 1; /* Set opacity to 1 when the fade-in class is applied */
 }
+
+@media (max-width: 600px) {
+  /* Your mobile-specific styles here */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
