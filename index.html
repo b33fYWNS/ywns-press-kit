@@ -246,11 +246,16 @@
   <div id="image-modal" class="modal">
   <span class="close-modal" onclick="closeModal()">&times;</span>
   <img id="full-size-image" class="modal-content">
+  <div id="download-section">
+    <p>download:</p>
+    <a href="#" id="download-link" download="image.jpg">Download Image</a>
+  </div>
 </div>
   
 <script>
   function openModal(imageSrc) {
     document.getElementById('full-size-image').src = imageSrc;
+    document.getElementById('download-link').href = imageSrc;
     document.getElementById('image-modal').style.display = 'flex';
   }
 
